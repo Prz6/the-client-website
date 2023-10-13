@@ -63,7 +63,13 @@ h1 {
 
 h2{
     font-family: Garamond;
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
+
 
 @media (max-width: 600px) {
     .panelen {
