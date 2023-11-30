@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CO2 Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>C02 Calculator</title>
+</head>
+<body>
+    <div id="calculator">
+        <h2> Carbon  Calculator</h2>
+
+        <label for="electricity"> uitstoot van elektriciteit (kg CO2 per kWh):</label>
+        <input type="number" id="electricity" placeholder="Enter electricity emissions">
+
+        <label for="heating"> Verwarmingsemissies (kg CO2 per square meter):</label>
+        <input type="number" id="heating" placeholder="Enter heating emissions">
+
+        <label for="transport">  Emissies van transport (kg CO2 per mile):</label>
+        <input type="number" id="transport" placeholder="Enter transportation emissions">
+
+        <label for="waste"> afval emissies (kg CO2 per ton):</label>
+        <input type="number" id="waste" placeholder="Enter waste emissions">
+
+        <label for="reisafstand"> wat is de totale reisafstand?(kg CO2 per Km):</label>
+        <input type="number" id="waste" placeholder="vul de totale reisafstand in">
+
+        <label for="leverancier"> aantal leveranciers? :</label>
+        <input type="number" id="waste" placeholder="zet het aantal leveranciers">
+
+        <label for="aandeelhouder"> hoeveel aandeelhouders zijn er? :</label>
+        <input type="number" id="waste" placeholder="zet het aantal aandeelhouders">
+
+        <label for="klanten"> hoeveel klanten?:</label>
+        <input type="number" id="waste" placeholder="vul het aantal klanten in">
+
+        
+
+        <button onclick="calculateFootprint()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateFootprint() {
+            var electricityEmissions = document.getElementById('electricity').value;
+            var heatingEmissions = document.getElementById('heating').value;
+            var transportEmissions = document.getElementById('transport').value;
+            var wasteEmissions = document.getElementById('waste').value;
+            var reisafstandEmissions = document.getElementById('reisafstand').value;
+            var leverancierEmissions = document.getElementById('leverancier').value;
+            var aandeelhouderEmissions = document.getElementById('aandeelhouder').value;
+            var klantenEmissions = document.getElementById('Klanten').value;        
+
+            var totalEmissions = parseFloat(electricityEmissions) + parseFloat(heatingEmissions) +
+                                parseFloat(transportEmissions) + parseFloat(wasteEmissions) + parseFloat(reisafstandEmissions) + 
+                                parseFloat(leverancierEmissions) + parseFloat(aandeelhouderEmissions) + parseFloat(klantenEmissions);
+
+            document.getElementById('result').innerText = 'Total Carbon Footprint: ' + totalEmissions.toFixed(2) + ' kg CO2';
+        }
+    </script>
+</body>
+</html>
